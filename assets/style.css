@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
-
+@import"bourbon";
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +35,7 @@ body{
 .search-container input, .search-container button{
     font-size: 0.9em;
     outline: none;
-    border-radius: 0.3em;
+    border-radius: 0.5em;
 }
 
 .search-container input{
@@ -44,8 +44,12 @@ body{
     color: #fff;
     padding: 0.7em;
 }
+
 .search-container input:focus{
-    border-color: #fff;
+    border-color: #ffffff;
+    border: 1px solid #fff;
+    transition: 0.3s ease-in;
+    box-shadow: 0px 0px 16px 0px rgba(0,0, 0, 0.3);
 }
 
 .search-container button{

@@ -7,12 +7,6 @@ let result = document.getElementById("result");
 let getMovie = () => {
     let movieName = movieNameRef.value;
     let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
-// Add event listener to the input element to capture Enter key press
-    movieNameRef.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-          getMovie();
-        }
-      });
     //if input field is empty
     if (movieName.length <= 0) {
         result.innerHTML = `<h3 class="msg"> Por favor coloque o nome do filme/série que deseja ver </h3>`;
@@ -61,7 +55,12 @@ let getMovie = () => {
             });
     }
 };
-
+// Add event listener to the input element to capture Enter key press
+movieNameRef.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      getMovie();
+    }
+  });
 searchBtn.addEventListener("click", getMovie);
 window.addEventListener("load", getMovie);
 
